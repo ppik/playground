@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Convert numbers to letters</title>
+  <meta name="description" content="numbers to ASCII letters interactive console">
+  <meta name="author" content="Peeter Piksarv">
+
+  <!--link rel="stylesheet" href="style.css"-->
+  <script src="num2str.js"></script>
+
+</head>
+
+<body>
+  <form name="testform">
+    <div class="result_box">
+        <textarea name="output" rows="10" cols="80"></textarea>
+    </div>
+    <div class="input_box">
+        <input name="input" type="text" size="8" />
+    </div>
+    <div>
+        <input type="reset" onclick="resetFields()" />
+    </div>
+  </form>
+  <div class="help">
+    <table border="0" cellspacing="1" class="data">
+    <script type="text/javascript">
+      var chars = [ "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                    "abcdefghijklmnopqrstuvwxyz",
+                    "0123456789 ÕÄÖÜ ŠŽ õäöü šž",
+                    "!\"#$%&'()*+,-./:;<=>?@[\\]^_",
+                    ];
+      var cols = chars.length;
+      var rows = 0;
+      // Get the max length of string in chars.
+      for (var i =0; i < cols; i++){
+        if (chars[0].length > rows) {
+          rows = chars[0].length;
+        }
+      }
+      
+      for (var j = 0; j < rows; j++) {
+        document.write("<tr>");
+        for (var i = 0; i < cols; i++) {
+          var n = chars[i][j]
+          document.write("<td class=\"a\">"+n.charCodeAt()+"</td><td class=\"b\">--></td><td class=c>"+n+"</td>");
+        }
+        document.write("</tr>");
+      }
+    </script>
+    </table>
+  </div>
+  <script type="text/javascript">
+    init();
+  </script>
+</body>
+</html>
