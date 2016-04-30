@@ -1,0 +1,6 @@
+Run as:
+PYOPENCL_CTX='' python matrix_multiply.py
+
+To compare with cuBLAS:
+PYOPENCL_CTX='' NVBLAS_CONFIG_FILE="/path/to/your/nvblas.conf" LD_PRELOAD="/opt/cuda/lib64/libnvblas.so" python matrix_multiply.py
+

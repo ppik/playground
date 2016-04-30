@@ -229,8 +229,11 @@ print("GFlops/s:", gflops)
 
 # cpu comparison --------------------------------------------------------------
 t1 = time()
-h_c_cpu = numpy.dot(h_a,h_b)
-cpu_time = time()-t1
+
+count = 20
+for i in range(count):
+    h_c_cpu = numpy.dot(h_a,h_b)
+cpu_time = (time()-t1)/count
 
 print()
 print("GPU==CPU:",numpy.allclose(h_c, h_c_cpu))
