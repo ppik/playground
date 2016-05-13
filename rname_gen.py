@@ -14,5 +14,3 @@ if __name__ == "__main__":
         print(gen_name(s))
         if input() > '':
             break
-        
-    
